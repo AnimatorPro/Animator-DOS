@@ -407,7 +407,7 @@ UWORD *pt;
 long psize;
 WORD *endcookie;
 static char callus[] = 
-  memory_101 /* "Internal error.  Please see Appendix B of Autodesk Animator Reference Manual." */;
+  memory_101 /* "Internal error." */;
 
 if (!(*(--pt) == START_COOKIE) )
 	{

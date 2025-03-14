@@ -14,7 +14,7 @@
 #define config_135 " Wacom II pressure sensitive Tablet"
 #define config_136 " Set serial port for tablet"
 #define config_138 "Select graphics input device"
-#define config_139 " Autodesk Animator normal clock."
+#define config_139 " Animator normal clock."
 #define config_140 " Slower clock that works with more mice."
 #define config_141 " Leave things as they are."
 #define config_142 "Adjust Clock Configuration"

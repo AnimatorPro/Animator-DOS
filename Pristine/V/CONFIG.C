@@ -269,7 +269,7 @@ init_input();
 
 static char *clock_lines[] =
 	{
-	config_139 /* " Autodesk Animator normal clock." */,
+	config_139 /* " Animator normal clock." */,
 	config_140 /* " Slower clock that works with more mice." */,
 	config_141 /* " Leave things as they are." */,
 	};

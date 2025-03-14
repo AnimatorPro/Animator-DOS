@@ -706,7 +706,7 @@ qquit()
 {
 char *bufs[3];
 
-bufs[0] =     vpaint_156 /* "Exit Autodesk Animator?" */;
+bufs[0] =     vpaint_156 /* "Exit Animator?" */;
 if (dirty_file)
 	{
 	bufs[1] = vpaint_157 /* "(You have unsaved changes.)" */;

@@ -38,7 +38,7 @@
 #define vpaint_152 "Grays Only"
 #define vpaint_153 "Blue Numbers"
 #define vpaint_155 "Special Effects"
-#define vpaint_156 "Exit Autodesk Animator?"
+#define vpaint_156 "Exit Animator?"
 #define vpaint_157 "(You have unsaved changes.)"
 #define vpaint_158 "Drive %c has %ld free bytes."
 #define vpaint_159 "%ld recommended for error free"

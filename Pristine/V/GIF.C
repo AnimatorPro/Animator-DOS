@@ -82,7 +82,7 @@ while (--colors >= 0)
 static char *wrong_res_lines[] =
 	{
 	gif_101 /* "File isn't 320x200." */,
-	gif_102 /* "Use Autodesk Animator converter." */,
+	gif_102 /* "Use Animator converter." */,
 	NULL,
 	};
 

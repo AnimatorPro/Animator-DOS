@@ -24,7 +24,7 @@ char buf6[50];
 long tot;
 extern long dfree();
 
-bufs[0] = status_100 /* "Autodesk Animator Info:" */;
+bufs[0] = status_100 /* "Animator Info:" */;
 bufs[1] = status_116 /* cst_ */;
 bufs[2] = buf1;
 bufs[3] = buf2;
@@ -54,14 +54,14 @@ continu_box(bufs);
 
 static char *about_lines[] =
 	{
-	status_108 /* "    Autodesk Animator" */,
+	status_108 /* "    Animator" */,
 	status_109 /* "  v. 1.02      s/n $$$$$$$$$$$$" */,
 	status_110 /* "Copyright 1989,1990,1991 by Jim Kent." */,
 	status_111 /* "          3/30/90" */,
-	status_112 /* "  Produced exclusively for" */,
-	status_113 /* "        Autodesk Inc." */,
-	status_114 /* "             By" */,
-	status_115 /* "       Yost Group Inc." */,
+	status_112 /* "  " */,
+	status_113 /* "        " */,
+	status_114 /* "             " */,
+	status_115 /* "      ." */,
 	status_116 /* cst_ */,
 	NULL,
 	};

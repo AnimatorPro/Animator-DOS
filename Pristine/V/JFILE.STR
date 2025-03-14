@@ -1,6 +1,6 @@
-#define jfile_100 "Sorry Autodesk Animator can't create:"
+#define jfile_100 "Sorry Animator can't create:"
 #define jfile_101 "Disk write-protected?"
-#define jfile_102 "Sorry Autodesk Animator can't find:"
+#define jfile_102 "Sorry Animator can't find:"
 #define jfile_104 "File truncated!"
 #define jfile_105 "Overwrite old"
 #define jfile_107 "File corrupted:"

@@ -464,7 +464,7 @@ char *name;
 char *bufs[4];
 char ebuf[80];
 
-bufs[0] = jfile_100 /* "Sorry Autodesk Animator can't create:" */,
+bufs[0] = jfile_100 /* "Sorry Animator can't create:" */,
 bufs[1] = name;
 get_dos_err_line(ebuf);
 bufs[2] = ebuf;
@@ -477,7 +477,7 @@ char *name;
 {
 char *bufs[3];
 
-bufs[0] = jfile_102 /* "Sorry Autodesk Animator can't find:" */,
+bufs[0] = jfile_102 /* "Sorry Animator can't find:" */,
 bufs[1] = name;
 bufs[2] = NULL;
 continu_box(bufs);
