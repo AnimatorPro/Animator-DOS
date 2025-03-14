@@ -3,7 +3,9 @@
    and only global - init_sys.c.   Crosslinks with cleanup.c */
 
 
+#include <signal.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <dos.h>
 #include "jimk.h"
 #include "flicmenu.h"
@@ -43,7 +45,11 @@ alloc_uf()
 union regs r;
 int i;
 
-if (emm_present())
+/* Comment by Pelle 2025-03-14:
+   The EMM code did not compile using MSC. Did not bother
+   to investigate. Not sure how important it is?
+ */
+ if (0 /* emm_present() */)
 	{
 	/* get emm page pointer... */
 	r.b.ah = 0x41;
@@ -241,8 +247,8 @@ long t1, dt;
 union regs r;
 
 /* trap control C */
-ctrlbrk(ret1);
-/* signal(SIGINT, SIG_IGN); portable but big way */
+/* ctrlbrk(ret1); */
+signal(SIGINT, SIG_IGN); /* portable but big way */
 
 /* get old video mode */
 r.b.ah = 0xf;

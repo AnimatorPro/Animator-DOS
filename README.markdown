@@ -19,6 +19,50 @@ More info at [the Animator Pro project homepage][1]
 
 [1]: http://animatorpro.org "Animator Pro project homepage"
 
+This Branch Demonstrates How To Build Using Tools from MS-DOS Repo
+------------------------------------------------------------------
+This branch modifies an older version (commit
+f5ed37135ad1f3e2788a43a25774eb46b2c0cc9a) of the Animator Pro A.K.A. repo just
+to show how the pristine Animator can be built using the tools included in
+Microsoft's MIT-licensed MS-DOS repo.
+
+YOU PROBABLY DO NOT WANT TO USE THIS VERSION! THIS IS FOR DEVELOPERS THAT WANT
+TO SEE HOW TO BUILD THE 16-BIT VERSION OF ANIMATOR USING A FREE COMPILER. THERE
+IS NO REASON TO USE THIS INSTEAD OF THE VERSION THAT CAN BE DOWNLOADED AT
+https://github.com/AnimatorPro/Animator-Pro/tree/f5ed3/bin/dos/v.
+
+Building is done in DOS. DOSBox seems to work fine (e.g. https://dosbox-x.com/).
+
+Clone the MS-DOS repo from https://github.com/microsoft/MS-DOS. Tested
+with the current HEAD that is at 2d04cacc5322951f187bb17e017c12920ac8ebe2.
+The only files needed are in the v4.0/src/TOOLS subdirectory
+(https://github.com/microsoft/MS-DOS/tree/main/v4.0/src/TOOLS).
+
+Copy Pristine/V (from this repository) and TOOLS (from the MS-DOS
+repository) somewhere together on a disk that you can access
+from DOS (e.g. somewhere that you mount as C: in DOSBox).
+Or just copy TOOLS into the Pristine directory and mount
+that in DOSBox (see example below).
+
+There is a MSBUILD.BAT script in Pristine\V. It assumes that
+the TOOLS are available in the parent directory (e.g. it
+adds ..\TOOLS to path). That is why TOOLS and V need to
+be in the same location.
+
+How to build: Start DOS, cd to the V directory, and run
+MSBUILD.BAT. This might work:
+    dosbox-x -c "mount e: Pristine" -c "e:" -c "cd v" -c "msbuild.bat"
+
+(It should also work to compile using other emulators or a
+real hardware PC running FreeDOS or MS-DOS.)
+
+This should create the V.EXE file that is all that is needed
+to run Animator. Assuming everything works as intended.
+
+There are many ugly compiler warnings because MSC does not like
+text after endif. It is easy to fix, but ignored for now to
+keep the diff smaller here.
+
 bin
 ---
 Compiled binaries (Currently only for Animator A.K.A., not Pro)

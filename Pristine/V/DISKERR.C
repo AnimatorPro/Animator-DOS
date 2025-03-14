@@ -4,9 +4,19 @@
    library routine I'm using.  Still yet another good reason not
    to switch to Microsoft! */
 
+/*
+  Comment by Pelle 2025-03-14:
+  It seems like the _harderr function in Microsoft C does
+  the same thing as the Turbo C harderr function?
+  Not sure if the (unsigned) errcode is identical to
+  the (int) errval, but this seems to work.
+ */
+
 #include "jimk.h"
 
 int crit_errval;
+
+#ifdef TURBOC
 
 static
 de_handler(errval, ax, bp, si)
@@ -23,3 +33,17 @@ init_de()
 harderr(de_handler);
 }
 
+#else
+
+handler(unsigned deverror, unsigned errcode, unsigned far *devhdr)
+{
+  crit_errval = (errcode & 0xff);
+  _hardretn();
+}
+
+init_de()
+{
+  _harderr(handler);
+}
+
+#endif
