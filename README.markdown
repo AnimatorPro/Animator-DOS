@@ -14,11 +14,6 @@ document this tiny bit of significant computer history, promote the usefulness
 of this program and hopefully improve and modify it for future and current 
 users, many of whom still find it very useful and fun.
 
-More info at [the Animator Pro project homepage][1]
-
-
-[1]: http://animatorpro.org "Animator Pro project homepage"
-
 This Branch Demonstrates How To Build Using Tools from MS-DOS Repo
 ------------------------------------------------------------------
 This branch modifies an older version (commit
@@ -63,39 +58,7 @@ There are many ugly compiler warnings because MSC does not like
 text after endif. It is easy to fix, but ignored for now to
 keep the diff smaller here.
 
-bin
 ---
-Compiled binaries (Currently only for Animator A.K.A., not Pro)
-
-Pristine
---------
-The original Autodesk Animator (A.K.A. Video Paint, VPaint, or simply V)
-exactly as it was sent to me by Jim Kent, preserved for historical purposes.
-
-Pristine-Pro
-------------
-The original Animator Pro (A.K.A. Autodesk Animator Pro, PJPaint or simply PJ)
-exactly as it was sent to me by Jim Kent, preserved for historical purposes.
-
-dev
----
-A work in progress version of the Animator Pro source as I work to improve it.
-
-text
-----
-The assorted text files and documentation found within the original source files.
-
-pocoscripts
------------
-Source code and documentation for scripts written in Animator Pro's built in 
-POCO scripting language; essentially an interpreted version of the 
-C programming language with some built in libraries for manipulating
-the program.
-
-files
------
-Example files that can be natively read into the Animator Pro software.
-
 
 This project is not endorsed by Autodesk, Inc., 
 Autodesk is a trademark of Autodesk, Inc.,
