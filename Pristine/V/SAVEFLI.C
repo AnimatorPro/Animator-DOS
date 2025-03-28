@@ -14,6 +14,7 @@ char dirty_frame;
 extern int tflx;
 extern char tflxname[];
 extern struct fli_head fhead;
+extern long find_free_tflx(long size);
 extern long frame1_foff(), flx_file_hi();
 
 stroke_count(strokes)
