@@ -39,17 +39,47 @@ sysint(0x10,&r,&r);
 extern char uf_in_emm;
 extern int emm_handle;
 
+char* emm_name = "EMMXXXX0";
+
+/* Attempt to implement emm_present in C, since
+   MASM 5.1 seems to have some problem with
+   the EMMCHEK.ASM version. */
+
+static
+emm_present()
+{
+  union regs r;
+  unsigned int emm_buff;
+  unsigned char fh;
+  r.b.ah = 0x3d;
+  r.b.al = 0;
+  r.w.ds = ptr_seg(emm_name);
+  r.w.dx = ptr_offset(emm_name);
+  if (sysint(0x21, &r, &r) & 1) {  /* cf set */
+    return 0;
+  }
+
+  r.w.bx = r.w.ax;
+  r.b.ah = 0x44;
+  r.b.al = 7;
+  r.w.cx = 0;
+  r.w.dx = ptr_offset(&emm_buff);
+  fh = r.b.al;
+
+  r.b.ah = 0x3e;
+  if (sysint(0x21, &r, &r) & 1) {  /* cf set */
+    return 0;
+  }
+  return fh != 0;
+}
+
 static
 alloc_uf()
 {
 union regs r;
 int i;
 
-/* Comment by Pelle 2025-03-14:
-   The EMM code did not compile using MSC. Did not bother
-   to investigate. Not sure how important it is?
- */
- if (0 /* emm_present() */)
+ if (emm_present())
 	{
 	/* get emm page pointer... */
 	r.b.ah = 0x41;
